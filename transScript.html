@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google翻译</title>
+    <meta charset="UTF-8"/>
+    <style>
+        #google_translate_element {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
+            opacity: 1
+        }
+    </style>
+    <script src="https://translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+<p>
+    杭州，简称“杭”，古称临安、钱塘，是浙江省省会、副省级市、杭州都市圈核心城市，国务院批复确定的中国浙江省省会和全省经济、文化、科教中心、长江三角洲中心城市之一 [1]
+    。截至2019年，全市下辖10个区、2个县、代管1个县级市，总面积16853.57平方千米，建成区面积559.2平方千米，常住人口1036万人，城镇人口813.26万人，城镇化率78.5%。 [2-3]
+    杭州地处中国华东地区、钱塘江下游、东南沿海、浙江北部、京杭大运河南端，是环杭州湾大湾区核心城市 [4] 、沪嘉杭G60科创走廊中心城市 [5] 、国际重要的电子商务中心 [6]
+    。杭州人文古迹众多，西湖及其周边有大量的自然及人文景观遗迹，具代表性的有西湖文化、良渚文化、丝绸文化、茶文化，以及流传下来的许多故事传说。
+    杭州自秦朝设县治以来已有2200多年的历史，曾是吴越国和南宋的都城。因风景秀丽，素有“人间天堂”的美誉。杭州得益于京杭运河和通商口岸的便利，以及自身发达的丝绸和粮食产业，历史上曾是重要的商业集散中心。后来依托沪杭铁路等铁路线路的通车以及上海在进出口贸易方面的带动，轻工业发展迅速。新世纪以来，随着阿里巴巴等高科技企业的带动，互联网经济成为杭州新的经济增长点。
+    2018年世界短池游泳锦标赛、2022年亚运会在杭州举办。2017年中国百强城市排行榜排第7位。 [7-8] 2019年6月未来网络试验设施开通运行。 [9] 11月29日，杭州直飞开罗航线正式开通。 [10]
+    2019年12月，《长江三角洲区域一体化发展规划纲要》将杭州定位为特大城市。
+</p>
+<div id="google_translate_element"></div>
+<button onclick="alert('我是测试翻译')">点击</button>
+</body>
+<script>
+    function googleTranslateElementInit() {
+        console.log('loaded script')
+        new google.translate.TranslateElement(
+            {
+                //这个参数不起作用，看文章底部更新，翻译面板的语言
+                //pageLanguage: 'zh-CN',
+                //这个是你需要翻译的语言，比如你只需要翻译成越南和英语，这里就只写en,vi
+                includedLanguages: 'en,zh-CN,hr,cs,da,nl,fr,de,el,iw,hu,ga,it,ja,ko,pt,ro,ru,sr,es,th,vi',
+                //选择语言的样式，这个是面板，还有下拉框的样式，具体的记不到了，找不到api~~
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                //自动显示翻译横幅，就是翻译后顶部出现的那个，有点丑，这个属性没有用的话，请看文章底部的其他方法
+                autoDisplay: true,
+                //还有些其他参数，由于原插件不再维护，找不到详细api了，将就了，实在不行直接上dom操作
+            },
+            'google_translate_element'//触发按钮的id
+        );
+    }
+</script>
+</html>
